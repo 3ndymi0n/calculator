@@ -1,0 +1,264 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Open+Sans&display=swap');
+@media (prefers-reduced-motion: no-preference) {
+    :root {
+      scroll-behavior: smooth;
+    }
+  }
+  
+  :root {
+    --background: #ecf0f3;
+    --black: #000;
+    --white: #fff;
+    --grey: #939BAB;
+    --blue: #394a56;
+    --primary-font:font-family: 'Nunito Sans', sans-serif;
+    --secondary-font: font-family: 'Open Sans', sans-serif;
+  }
+  
+  *,
+  :after,
+  :before {
+    --webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    font-family: var(--primary-font);
+    background-color: var(--background);
+    background: #003973;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #E5E5BE, #003973);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #E5E5BE, #003973); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+  }
+
+  .calc {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    height: 600px;
+    width: 350px;
+    background-color: var(--background);
+    box-shadow: 
+    12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -8px -8px 12px 0 rgb(178, 191, 174, 0.40);
+  border-radius: 50px;
+
+  }
+
+  .label {
+    display: inline-flex;
+    align-items: center;
+    cursor: pointer;
+    color: var(--blue);
+    align-self: flex-end;
+    margin-right: 10px;
+  }
+  
+  .label-text {
+    margin-left: 16px;
+  }
+  
+  .toggle {
+    isolation: isolate;
+    position: relative;
+    height: 30px;
+    width: 60px;
+    border-radius: 25px;
+    overflow: hidden;
+    box-shadow:
+      -8px -4px 8px 0px #ffffff,
+      8px 4px 12px 0px #d1d9e6,
+      4px 4px 4px 0px #d1d9e6 inset,
+      -4px -4px 4px 0px #ffffff inset;
+  }
+  
+  .toggle-state {
+    display: none;
+  }
+  
+  .indicator {
+    height: 100%;
+    width: 200%;
+    background: var(--background);
+    border-radius: 25px;
+    transform: translate3d(-75%, 0, 0);
+    transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
+    box-shadow:
+      -8px -4px 8px 0px #ffffff,
+      8px 4px 12px 0px #d1d9e6;
+  }
+  
+  .toggle-state:checked ~ .indicator {
+    transform: translate3d(25%, 0, 0);
+  }
+
+  .header {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-top: 10px;
+  }
+
+  .display {
+    height: 50px;
+    width: 300px;
+    margin-top: 25px;
+    padding: 5px;
+    box-shadow:
+      -8px -4px 8px 0px #ffffff,
+      8px 4px 12px 0px #d1d9e6,
+      4px 4px 4px 0px #d1d9e6 inset,
+      -4px -4px 4px 0px #ffffff inset;
+  }
+
+.screen_background {
+    height: 100%;
+    width: 100%;
+    background-color: #d7d7d8;
+    z-index: -1;
+}
+
+.neobutton {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    padding-bottom: 20px;
+    padding-right: 20px;
+    margin-top: 25px;
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    justify-self: center;
+    align-self: center;
+    color: var(--grey);
+    font-size: 1.2em;
+    letter-spacing: 4px;
+    line-height: 1.2em;
+    transition: .1s all ease-in-out;
+    box-shadow:
+      -8px -4px 8px 0px #ffffff,
+      8px 4px 12px 0px #d1d9e6,
+      4px 4px 4px 0px #d1d9e6 inset,
+      -4px -4px 4px 0px #ffffff inset;
+}
+
+.neobutton:hover {
+    color: var(--black);
+    box-shadow: 
+    -8px -4px 8px 0px #ffffff,
+    8px 4px 12px 0px #d1d9e6,
+    inset 6px 6px 5px 0 rgba(217,210,200,.51), 
+    inset -6px -6px 5px 0 rgba(255,255,255,.43);
+}
+
+.numpad {
+    display: grid;
+    margin-top: 30px;
+    padding: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+    "seven eight nine c percent"
+    "four five six times divide"
+    "one two three plus minus"
+    "zero signed decimal plus equals";
+}
+
+.brand{
+    text-align: center;
+    font-size: 1.8rem;
+    color: transparent;
+    background: #666666;
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
+}
+
+.c {
+    grid-area: c;
+}
+
+.signed {
+    grid-area: signed;
+}
+
+.percent {
+    grid-area: percent;
+}
+
+.divide {
+    grid-area: divide;
+}
+
+.times {
+    grid-area: times;
+}
+
+.plus {
+    grid-area: plus;
+    height: auto;
+    border-radius: 10px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.minus {
+    grid-area: minus;
+}
+
+.equals {
+    grid-area: equals;
+}
+
+.decimal {
+    grid-area: decimal;
+}
+
+.nine {
+    grid-area: nine;
+}
+
+.eight {
+    grid-area: eight;
+}
+
+.seven {
+    grid-area: seven;
+}
+
+.six {
+    grid-area: six;
+}
+
+.five {
+    grid-area: five;
+}
+
+.four {
+    grid-area: four;
+}
+
+.three {
+    grid-area: three;
+}
+
+.two {
+    grid-area: two;
+}
+
+.one {
+    grid-area: one;
+}
+
+.zero {
+    grid-area: zero;
+}
