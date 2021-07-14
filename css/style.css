@@ -96,6 +96,7 @@
   
   .toggle-state:checked ~ .indicator {
     transform: translate3d(25%, 0, 0);
+    background-color:#597C91;
   }
 
   .header {
@@ -127,9 +128,10 @@
       width: 100%;
       font-family: var(--secondary-font);
       color: var(--blue);
+      transition: all 1.5s;
   }
 
-.screen_background {
+.screen_on {
     height: 100%;
     width: 100%;
     background-color: #d7d7d8;

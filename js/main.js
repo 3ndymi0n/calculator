@@ -1,5 +1,11 @@
 let displayItems = [];
 
+const powerButton = document.querySelector("input[name=power-state]");
+const screen = document.getElementById('screen');
+powerButton.addEventListener('change', (event) => {
+    toggleClass(screen, "screen_on");
+})
+
 const buttons = document.querySelectorAll(".neobutton");
 Array.from(buttons).forEach(function(item) {
     item.addEventListener("click", (event) => {
@@ -39,4 +45,17 @@ function updateDisplay(item){
     }else {
         screen.appendChild(displayOutput)
     };
+}
+
+function toggleClass(element, className) {
+    function hasClass(element, className) {
+        return element.classList ? element.classList.contains(className) :
+               new RegExp('\\b'+ className+'\\b').test(element.className);
+    }
+
+    if(hasClass(element, className)) {
+        element.classList.remove(className);
+    }else {
+        element.classList.add(className);
+    }
 }
