@@ -1,5 +1,5 @@
 
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans&family=Open+Sans+Condensed:wght@700&display=swap');
 @media (prefers-reduced-motion: no-preference) {
     :root {
       scroll-behavior: smooth;
@@ -10,10 +10,10 @@
     --background: #ecf0f3;
     --black: #000;
     --white: #fff;
-    --grey: #939BAB;
+    --grey: #666666;
     --blue: #394a56;
-    --primary-font:font-family: 'Nunito Sans', sans-serif;
-    --secondary-font: font-family: 'Open Sans', sans-serif;
+    --primary-font: 'Nunito Sans', sans-serif;
+    --secondary-font: 'Open Sans Condensed', sans-serif;
   }
   
   *,
@@ -27,13 +27,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    width: 100vw;
+    height: 98vh;
+    width: 99vw;
     font-family: var(--primary-font);
-    background-color: var(--background);
     background: #003973;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #E5E5BE, #003973);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #E5E5BE, #003973); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: -webkit-linear-gradient(to right, #E5E5BE, #003973);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #E5E5BE, #003973); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
   }
 
@@ -47,7 +46,7 @@ background: linear-gradient(to right, #E5E5BE, #003973); /* W3C, IE 10+/ Edge, F
     background-color: var(--background);
     box-shadow: 
     12px 12px 16px 0 rgba(0, 0, 0, 0.25),
-    -8px -8px 12px 0 rgb(178, 191, 174, 0.40);
+    -8px -8px 16px 0 rgb(178, 191, 174, 0.35);
   border-radius: 50px;
 
   }
@@ -118,6 +117,18 @@ background: linear-gradient(to right, #E5E5BE, #003973); /* W3C, IE 10+/ Edge, F
       -4px -4px 4px 0px #ffffff inset;
   }
 
+  .screen {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+      overflow: hidden;
+      height: 100%;
+      width: 100%;
+      font-family: var(--secondary-font);
+      color: var(--blue);
+  }
+
 .screen_background {
     height: 100%;
     width: 100%;
@@ -151,6 +162,7 @@ background: linear-gradient(to right, #E5E5BE, #003973); /* W3C, IE 10+/ Edge, F
 }
 
 .neobutton:hover {
+    cursor: pointer;
     color: var(--black);
     box-shadow: 
     -8px -4px 8px 0px #ffffff,
@@ -167,7 +179,7 @@ background: linear-gradient(to right, #E5E5BE, #003973); /* W3C, IE 10+/ Edge, F
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-areas: 
     "seven eight nine c percent"
-    "four five six times divide"
+    "four five six multiply divide"
     "one two three plus minus"
     "zero signed decimal plus equals";
 }
@@ -176,7 +188,7 @@ background: linear-gradient(to right, #E5E5BE, #003973); /* W3C, IE 10+/ Edge, F
     text-align: center;
     font-size: 1.8rem;
     color: transparent;
-    background: #666666;
+    background: var(--grey);
     -webkit-background-clip: text;
     -moz-background-clip: text;
     background-clip: text;
@@ -199,8 +211,8 @@ background: linear-gradient(to right, #E5E5BE, #003973); /* W3C, IE 10+/ Edge, F
     grid-area: divide;
 }
 
-.times {
-    grid-area: times;
+.multiply {
+    grid-area: multiply;
 }
 
 .plus {
