@@ -88,7 +88,7 @@
     background: var(--background);
     border-radius: 25px;
     transform: translate3d(-75%, 0, 0);
-    transition: transform 0.4s cubic-bezier(0.85, 0.05, 0.18, 1.35);
+    transition: transform 0.6s cubic-bezier(0.85, 0.05, 0.18, 1.35);
     box-shadow:
       -8px -4px 8px 0px #ffffff,
       8px 4px 12px 0px #d1d9e6;
@@ -97,7 +97,7 @@
   .toggle-state:checked ~ .indicator {
     transform: translate3d(25%, 0, 0);
     background-color:#597C91;
-  }
+}
 
   .header {
     display: flex;
@@ -126,7 +126,10 @@
       overflow: hidden;
       height: 100%;
       width: 100%;
+      padding-right: 15px;
       font-family: var(--secondary-font);
+      font-size: 1.5rem;
+      letter-spacing: -1px;
       color: var(--blue);
       transition: all 1.5s;
   }
@@ -173,6 +176,10 @@
     inset -6px -6px 5px 0 rgba(255,255,255,.43);
 }
 
+.locked {
+    pointer-events: none;
+}
+
 .numpad {
     display: grid;
     margin-top: 30px;
@@ -180,7 +187,7 @@
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr;
     grid-template-areas: 
-    "seven eight nine c percent"
+    "seven eight nine c backspace"
     "four five six multiply divide"
     "one two three plus minus"
     "zero signed decimal plus equals";
@@ -197,17 +204,35 @@
     text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
 }
 
+#label{
+    margin-right: 10px;
+    font-size: 0.8rem;
+    color: transparent;
+    background: var(--grey);
+    -webkit-background-clip: text;
+    -moz-background-clip: text;
+    background-clip: text;
+    text-shadow: 0px 3px 3px rgba(255,255,255,0.5);
+}
+
 .c {
     grid-area: c;
 }
 
-.signed {
-    grid-area: signed;
+.c-wide {
+ width: auto;
+ border-radius: 10px;
+ padding: 0 50px 0 50px;
 }
 
-.percent {
-    grid-area: percent;
+.signed {
+    grid-area: signed;
+    
 }
+
+/* .percent{
+    grid-area: percent;
+} */
 
 .divide {
     grid-area: divide;

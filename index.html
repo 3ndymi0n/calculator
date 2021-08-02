@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="css/style.css" rel="stylesheet" />
     <title>Calculator</title>
   </head>
@@ -11,6 +12,7 @@
       <div class="calc">
           <div class="header">
             <label class="label">
+                <span id="label">Power</span>
                 <div class="toggle">
                   <input class="toggle-state power-state" type="checkbox" name="power-state" value="check" />
                   <div class="indicator"></div>
@@ -21,25 +23,25 @@
             </div>
           </div>
           <div class="numpad">
-              <span class="c neobutton" id="c">C</span>
-              <span class="signed neobutton" id="signed">+/-</span>
-              <span class="percent neobutton" id="percent">%</span>
-              <span class="divide neobutton" id="divide">÷</span>
-              <span class="multiply neobutton" id="multiply">x</span>
-              <span class="plus neobutton" id="plus">+</span>
-              <span class="minus neobutton" id="minus">-</span>
-              <span class="equals neobutton"id="equals">=</span>
-              <span class="decimal neobutton" id="period">.</span>
-              <span class="nine neobutton" id="nine">9</span>
-              <span class="eight neobutton" id="eight">8</span>
-              <span class="seven neobutton" id="seven">7</span>
-              <span class="six neobutton" id="six">6</span>
-              <span class="five neobutton" id="five">5</span>
-              <span class="four neobutton" id="four">4</span>
-              <span class="three neobutton" id="three">3</span>
-              <span class="two neobutton" id="two">2</span>
-              <span class="one neobutton" id="one">1</span>
-              <span class="zero neobutton" id="zero">0</span>
+              <span class="c neobutton locked" id="c">C</span>
+              <span class="signed neobutton locked" id="signed">+/-</span>
+              <span class="percent neobutton locked" id="backspace" ><i class="fa fa-arrow-left" aria-hidden="true" id="back"></i></span>
+              <span class="divide neobutton locked" id="divide">÷</span>
+              <span class="multiply neobutton locked" id="multiply">x</span>
+              <span class="plus neobutton locked" id="plus">+</span>
+              <span class="minus neobutton locked" id="minus">-</span>
+              <span class="equals neobutton locked"id="equals">=</span>
+              <span class="decimal neobutton locked" id="period">.</span>
+              <span class="nine neobutton locked" id="nine">9</span>
+              <span class="eight neobutton locked" id="eight">8</span>
+              <span class="seven neobutton locked" id="seven">7</span>
+              <span class="six neobutton locked" id="six">6</span>
+              <span class="five neobutton locked" id="five">5</span>
+              <span class="four neobutton locked" id="four">4</span>
+              <span class="three neobutton locked" id="three">3</span>
+              <span class="two neobutton locked" id="two">2</span>
+              <span class="one neobutton locked" id="one">1</span>
+              <span class="zero neobutton locked" id="zero">0</span>
           </div>
           <div class="brand"><p>NeoCalc</p></div>
       </div>
